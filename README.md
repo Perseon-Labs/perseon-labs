@@ -1,2 +1,2 @@
-# perseon-labs
-Public static site
+# Perseon Labs
+Public site
