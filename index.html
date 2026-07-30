@@ -5,46 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Perseon Labs — Applied AI &amp; Software Product Lab</title>
   <meta name="description" content="Perseon Labs builds software products for the enterprise. Our flagship product, Veritas, brings AI agents to due diligence." />
+  <meta name="theme-color" content="#ffffff" />
 
   <!-- Favicon -->
-  <link rel="icon" href="assets/perseon_labs.png" type="image/png" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/perseon_labs.png" />
 
   <!-- Tailwind CSS (CDN, no build step required for static hosting) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            ink: {
-              950: '#05070d',
-              900: '#0a0e17',
-              800: '#0f1523',
-              700: '#161e30',
+            /* Sampled from the Perseon Labs mark: white, Persian blue, gold */
+            paper: {
+              DEFAULT: '#ffffff',
+              50: '#faf9f7',
+              100: '#f7f6f3',
+              200: '#efede8',
+              300: '#e5e2db',
             },
-            accent: {
-              400: '#7dd3fc',
-              500: '#38bdf8',
-              600: '#0ea5e9',
+            ink: {
+              900: '#12194d',
+              800: '#1b2676',
+              700: '#243186',
+              600: '#2b3a95',
+              100: '#e7e9f5',
+            },
+            gold: {
+              600: '#8a6b20',
+              500: '#c9a13c',
+              400: '#e2b83e',
+              100: '#f5ead0',
             },
           },
           fontFamily: {
             sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
           },
-          animation: {
-            'fade-up': 'fadeUp 0.8s ease-out both',
-            'glow': 'glow 6s ease-in-out infinite',
-          },
-          keyframes: {
-            fadeUp: {
-              '0%': { opacity: 0, transform: 'translateY(16px)' },
-              '100%': { opacity: 1, transform: 'translateY(0)' },
-            },
-            glow: {
-              '0%, 100%': { opacity: 0.35 },
-              '50%': { opacity: 0.6 },
-            },
+          maxWidth: {
+            prose: '38rem',
           },
         },
       },
@@ -54,45 +55,43 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body class="bg-ink-950 text-slate-200 font-sans antialiased selection:bg-accent-500/30 selection:text-white">
+<body class="bg-paper font-sans text-ink-900 antialiased selection:bg-ink-100">
 
-  <!-- Background glow -->
-  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-    <div class="absolute left-1/2 top-[-10%] h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-accent-600/20 blur-3xl animate-glow"></div>
-    <div class="absolute right-[-10%] bottom-[-10%] h-[28rem] w-[28rem] rounded-full bg-indigo-600/10 blur-3xl animate-glow"></div>
-  </div>
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-ink-800 focus:px-4 focus:py-2 focus:text-sm focus:text-white">
+    Skip to content
+  </a>
 
   <!-- Nav -->
-  <header class="sticky top-0 z-50 border-b border-white/5 bg-ink-950/80 backdrop-blur">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-      <a href="#top" class="flex items-center gap-2.5 text-lg font-bold tracking-tight text-white">
-        <img src="assets/perseon_labs.png" alt="Perseon Labs logo" width="28" height="28" class="rounded-lg" />
-        Perseon Labs
+  <header class="sticky top-0 z-50 border-b border-paper-300 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/perseon_mark.png" alt="" width="36" height="36" class="h-9 w-9 object-contain" />
+        <span class="font-display text-lg font-semibold text-ink-900">Perseon Labs</span>
       </a>
 
-      <nav class="hidden items-center gap-8 text-sm font-medium text-slate-300 md:flex">
-        <a href="#products" class="transition hover:text-white">Products</a>
-        <a href="#about" class="transition hover:text-white">About</a>
-        <a href="#approach" class="transition hover:text-white">Approach</a>
-        <a href="#contact" class="transition hover:text-white">Contact</a>
+      <nav aria-label="Primary" class="hidden items-center gap-9 text-sm text-ink-900/70 md:flex">
+        <a href="#products" class="link-underline hover:text-ink-900">Products</a>
+        <a href="#about" class="link-underline hover:text-ink-900">About</a>
+        <a href="#approach" class="link-underline hover:text-ink-900">Approach</a>
+        <a href="#contact" class="link-underline hover:text-ink-900">Contact</a>
       </nav>
 
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-4">
         <a
           href="https://veritas.perseonlabs.io"
           target="_blank"
           rel="noopener noreferrer"
-          class="hidden rounded-lg border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-accent-500/50 hover:text-white sm:inline-flex"
+          class="hidden text-sm text-ink-900/70 link-underline hover:text-ink-900 sm:inline-block"
         >
           Veritas ↗
         </a>
         <a
           href="mailto:contact@perseonlabs.io"
-          class="inline-flex items-center rounded-lg bg-accent-500 px-4 py-2 text-sm font-semibold text-ink-950 shadow-lg shadow-accent-500/20 transition hover:bg-accent-400"
+          class="inline-flex items-center rounded-full bg-ink-800 px-5 py-2 text-sm font-medium text-white transition hover:bg-ink-900"
         >
           Get in touch
         </a>
@@ -100,34 +99,34 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main">
     <!-- Hero -->
-    <section class="relative overflow-hidden px-6 pb-24 pt-20 sm:pt-28">
-      <div class="mx-auto max-w-4xl text-center">
-        <span class="animate-fade-up inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-accent-400">
-          Software &amp; AI Product Lab
-        </span>
-        <h1 class="mt-6 animate-fade-up text-4xl font-extrabold tracking-tight text-white sm:text-6xl" style="animation-delay: 80ms">
-          We build niche software products by combining years of software engineering expertise with AI
-          <span class="bg-gradient-to-r from-accent-400 to-indigo-400 bg-clip-text text-transparent">for the enterprise.</span>
-        </h1>
-        <p class="mx-auto mt-6 max-w-2xl animate-fade-up text-lg text-slate-400" style="animation-delay: 160ms">
-          Perseon Labs is a product lab designing software that automate
-          high-stakes, judgment-intensive work — starting with due diligence.
+    <section id="top" class="bg-grid border-b border-paper-300 px-6 py-24 sm:py-32">
+      <div class="mx-auto max-w-6xl">
+        <p class="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-gold-600">
+          <span class="h-px w-10 bg-gold-500"></span>
+          Software &amp; AI product lab
         </p>
-        <div class="mt-10 flex animate-fade-up flex-col items-center justify-center gap-4 sm:flex-row" style="animation-delay: 240ms">
+        <h1 class="mt-8 max-w-4xl font-display text-4xl font-medium leading-[1.1] text-ink-900 sm:text-6xl">
+          We build niche software products for the enterprise — engineering craft first, AI where it earns its place.
+        </h1>
+        <p class="mt-8 max-w-prose text-lg leading-relaxed text-ink-900/70">
+          Perseon Labs designs software that automates high-stakes, judgment-intensive
+          work. We start with due diligence.
+        </p>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <a
             href="https://veritas.perseonlabs.io"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent-500 px-6 py-3 text-sm font-semibold text-ink-950 shadow-lg shadow-accent-500/25 transition hover:bg-accent-400 sm:w-auto"
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-ink-800 px-6 py-3 text-sm font-medium text-white transition hover:bg-ink-900"
           >
             Explore Veritas
             <span aria-hidden="true">→</span>
           </a>
           <a
             href="#products"
-            class="inline-flex w-full items-center justify-center rounded-lg border border-white/10 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/25 hover:text-white sm:w-auto"
+            class="inline-flex items-center justify-center rounded-full border border-ink-900/15 px-6 py-3 text-sm font-medium text-ink-900 transition hover:border-ink-900/40 hover:bg-white"
           >
             View our products
           </a>
@@ -135,209 +134,214 @@
       </div>
     </section>
 
-    <!-- Trust strip -->
-    <section class="border-y border-white/5 bg-white/[0.02] py-10">
-      <div class="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center">
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+    <!-- Capability strip -->
+    <section class="border-b border-paper-300 bg-white px-6 py-14">
+      <div class="mx-auto max-w-6xl">
+        <p class="text-xs font-medium uppercase tracking-[0.22em] text-ink-900/55">
           Built for teams that move fast on high-stakes decisions
         </p>
-        <div class="grid w-full grid-cols-2 gap-8 text-sm text-slate-500 sm:grid-cols-4">
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-2xl font-bold text-white">AI Agents</span>
-            <span>Autonomous workflows</span>
+        <dl class="mt-8 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="border-t border-paper-300 pt-5">
+            <dt class="font-display text-xl text-ink-900">AI agents</dt>
+            <dd class="mt-1 text-sm text-ink-900/60">Autonomous workflows</dd>
           </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-2xl font-bold text-white">Enterprise</span>
-            <span>Security-first</span>
+          <div class="border-t border-paper-300 pt-5">
+            <dt class="font-display text-xl text-ink-900">Enterprise</dt>
+            <dd class="mt-1 text-sm text-ink-900/60">Security-first</dd>
           </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-2xl font-bold text-white">Agentic Coding</span>
-            <span>Architect future software, faster</span>
+          <div class="border-t border-paper-300 pt-5">
+            <dt class="font-display text-xl text-ink-900">Agentic coding</dt>
+            <dd class="mt-1 text-sm text-ink-900/60">Architect future software, faster</dd>
           </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-2xl font-bold text-white">Multi-Product</span>
-            <span>One lab, many bets</span>
+          <div class="border-t border-paper-300 pt-5">
+            <dt class="font-display text-xl text-ink-900">Multi-product</dt>
+            <dd class="mt-1 text-sm text-ink-900/60">One lab, many bets</dd>
           </div>
-        </div>
+        </dl>
       </div>
     </section>
 
     <!-- Products -->
     <section id="products" class="px-6 py-24">
       <div class="mx-auto max-w-6xl">
-        <div class="mx-auto max-w-2xl text-center">
-          <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-accent-400">Products</h2>
-          <p class="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            One lab. Multiple products.
-          </p>
-          <p class="mt-4 text-slate-400">
-            Perseon Labs incubates focused, software products. Each one is built to solve
-            a specific, high-value problem.
-          </p>
-        </div>
-
-        <div class="mt-14 grid gap-8 lg:grid-cols-2">
-          <!-- Veritas: flagship product -->
-          <a
-            href="https://veritas.perseonlabs.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative flex flex-col overflow-hidden rounded-2xl border border-accent-500/20 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-8 transition hover:border-accent-500/40 hover:from-white/[0.08]"
-          >
-            <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent-500/10 blur-2xl transition group-hover:bg-accent-500/20"></div>
-            <div class="relative flex items-center justify-between">
-              <span class="inline-flex items-center rounded-full bg-accent-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent-400">
-                Flagship product
-              </span>
-              <span class="text-slate-500 transition group-hover:translate-x-1 group-hover:text-accent-400">→</span>
-            </div>
-            <h3 class="relative mt-5 text-2xl font-bold text-white">Veritas</h3>
-            <p class="relative mt-2 text-sm font-medium text-accent-400">veritas.perseonlabs.io</p>
-            <p class="relative mt-4 text-slate-400">
-              Due diligence with AI agents. Veritas deploys autonomous agents that research,
-              cross-check, and synthesize findings — turning weeks of manual diligence into
-              hours of agent-driven analysis, with full source traceability.
+        <div class="rule-gold h-px w-full"></div>
+        <div class="mt-10 grid gap-10 lg:grid-cols-[1fr_2fr]">
+          <div>
+            <h2 class="text-xs font-medium uppercase tracking-[0.22em] text-gold-600">Products</h2>
+            <p class="mt-4 font-display text-3xl leading-tight text-ink-900 sm:text-4xl">
+              One lab.<br />Multiple products.
             </p>
-            <ul class="relative mt-6 space-y-2 text-sm text-slate-400">
-              <li class="flex items-start gap-2">
-                <span class="mt-0.5 text-accent-400">✓</span> Autonomous research &amp; document review
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="mt-0.5 text-accent-400">✓</span> Risk flagging with cited sources
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="mt-0.5 text-accent-400">✓</span> Built for deal teams &amp; advisors
-              </li>
-            </ul>
-            <span class="relative mt-8 inline-flex w-fit items-center gap-2 text-sm font-semibold text-white">
-              Visit Veritas <span class="transition group-hover:translate-x-1">→</span>
-            </span>
-          </a>
+            <p class="mt-5 max-w-prose text-ink-900/70">
+              Perseon Labs incubates focused software products. Each one is built to solve a
+              specific, high-value problem.
+            </p>
+          </div>
 
-          <!-- Future products placeholder -->
-          <div class="relative flex flex-col justify-between overflow-hidden rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-8">
-            <div>
-              <span class="inline-flex items-center rounded-full bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-slate-400">
-                In the lab
-              </span>
-              <h3 class="mt-5 text-2xl font-bold text-white">What's next</h3>
-              <p class="mt-4 text-slate-400">
-                We're continuously incubating new software products for the enterprise using years of expertise and AI.
-              </p>
-            </div>
+          <div class="grid gap-6 sm:grid-cols-2">
+            <!-- Veritas: flagship product -->
             <a
-              href="#contact"
-              class="mt-8 inline-flex w-fit items-center gap-2 text-sm font-semibold text-accent-400 transition hover:text-accent-300"
+              href="https://veritas.perseonlabs.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex flex-col rounded-xl border border-paper-300 bg-white p-8 transition hover:border-ink-800/30"
             >
-              Talk to us <span>→</span>
+              <div class="flex items-start justify-between gap-4">
+                <span class="text-xs font-medium uppercase tracking-[0.18em] text-gold-600">
+                  Flagship
+                </span>
+                <span aria-hidden="true" class="text-ink-900/30 transition group-hover:translate-x-1 group-hover:text-ink-800">→</span>
+              </div>
+              <h3 class="mt-6 font-display text-2xl text-ink-900">Veritas</h3>
+              <p class="mt-1 text-sm text-ink-600">veritas.perseonlabs.io</p>
+              <p class="mt-5 text-sm leading-relaxed text-ink-900/70">
+                Due diligence with AI agents. Veritas deploys autonomous agents that research,
+                cross-check, and synthesise findings — turning weeks of manual diligence into
+                hours of agent-driven analysis, with full source traceability.
+              </p>
+              <ul class="mt-6 space-y-3 border-t border-paper-200 pt-6 text-sm text-ink-900/70">
+                <li class="flex gap-3">
+                  <span aria-hidden="true" class="text-gold-500">—</span>
+                  Autonomous research &amp; document review
+                </li>
+                <li class="flex gap-3">
+                  <span aria-hidden="true" class="text-gold-500">—</span>
+                  Risk flagging with cited sources
+                </li>
+                <li class="flex gap-3">
+                  <span aria-hidden="true" class="text-gold-500">—</span>
+                  Built for deal teams &amp; advisors
+                </li>
+              </ul>
+              <span class="mt-8 text-sm font-medium text-ink-800">Visit Veritas →</span>
             </a>
+
+            <!-- Future products placeholder -->
+            <div class="flex flex-col justify-between rounded-xl border border-dashed border-paper-300 bg-paper-100 p-8">
+              <div>
+                <span class="text-xs font-medium uppercase tracking-[0.18em] text-ink-900/55">
+                  In the lab
+                </span>
+                <h3 class="mt-6 font-display text-2xl text-ink-900">What&rsquo;s next</h3>
+                <p class="mt-5 text-sm leading-relaxed text-ink-900/70">
+                  We&rsquo;re continuously incubating new software products for the enterprise,
+                  drawing on years of engineering experience.
+                </p>
+              </div>
+              <a href="#contact" class="mt-8 text-sm font-medium text-ink-800 link-underline">
+                Talk to us →
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="border-t border-white/5 bg-white/[0.02] px-6 py-24">
-      <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
-        <div>
-          <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-accent-400">About Perseon Labs</h2>
-          <p class="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            A software lab that ships products using years of software engineering experience and AI
-          </p>
-          <p class="mt-6 text-slate-400">
-            Perseon Labs is an applied AI and software product studio. We identify
-            expensive, expert-driven workflows and rebuild them around autonomous agents.
-          </p>
-          <p class="mt-4 text-slate-400">
-            Veritas is our first product, focused on due diligence. It's the first of
-            several bets we're making on where AI agents can replace slow, manual work with
-            faster, auditable, agent-driven processes.
-          </p>
+    <section id="about" class="border-y border-paper-300 bg-white px-6 py-24">
+      <div class="mx-auto max-w-6xl">
+        <div class="rule-gold h-px w-full"></div>
+        <div class="mt-10 grid gap-12 lg:grid-cols-[1fr_1fr]">
+          <div>
+            <h2 class="text-xs font-medium uppercase tracking-[0.22em] text-gold-600">About Perseon Labs</h2>
+            <p class="mt-4 font-display text-3xl leading-tight text-ink-900 sm:text-4xl">
+              A software lab that ships products.
+            </p>
+          </div>
+          <div class="space-y-5 text-ink-900/70">
+            <p>
+              Perseon Labs is an applied AI and software product studio. We identify expensive,
+              expert-driven workflows and rebuild them around autonomous agents.
+            </p>
+            <p>
+              Veritas is our first product, focused on due diligence. It&rsquo;s the first of
+              several bets we&rsquo;re making on where AI agents can replace slow, manual work
+              with faster, auditable processes.
+            </p>
+          </div>
         </div>
 
-        <div class="grid gap-6 sm:grid-cols-2">
-          <div class="rounded-2xl border border-white/5 bg-ink-900 p-6">
-            <div class="text-2xl">🧭</div>
-            <h3 class="mt-4 font-semibold text-white">Product-first</h3>
-            <p class="mt-2 text-sm text-slate-400">
+        <dl class="mt-16 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="border-t border-paper-300 pt-6">
+            <dt class="font-display text-lg text-ink-900">Product-first</dt>
+            <dd class="mt-2 text-sm leading-relaxed text-ink-900/60">
               We build for real workflows and real customers, not just benchmarks.
-            </p>
+            </dd>
           </div>
-          <div class="rounded-2xl border border-white/5 bg-ink-900 p-6">
-            <div class="text-2xl">🔐</div>
-            <h3 class="mt-4 font-semibold text-white">Trust by design</h3>
-            <p class="mt-2 text-sm text-slate-400">
+          <div class="border-t border-paper-300 pt-6">
+            <dt class="font-display text-lg text-ink-900">Trust by design</dt>
+            <dd class="mt-2 text-sm leading-relaxed text-ink-900/60">
               Traceable, source-cited outputs so agents augment expert judgment.
-            </p>
+            </dd>
           </div>
-          <div class="rounded-2xl border border-white/5 bg-ink-900 p-6">
-            <div class="text-2xl">⚙️</div>
-            <h3 class="mt-4 font-semibold text-white">Agentic architecture</h3>
-            <p class="mt-2 text-sm text-slate-400">
+          <div class="border-t border-paper-300 pt-6">
+            <dt class="font-display text-lg text-ink-900">Agentic architecture</dt>
+            <dd class="mt-2 text-sm leading-relaxed text-ink-900/60">
               Multi-agent systems designed to execute enterprise workflows.
-            </p>
+            </dd>
           </div>
-          <div class="rounded-2xl border border-white/5 bg-ink-900 p-6">
-            <div class="text-2xl">🚀</div>
-            <h3 class="mt-4 font-semibold text-white">Multi-product lab</h3>
-            <p class="mt-2 text-sm text-slate-400">
-              Veritas is first. More focused AI products are on the way.
-            </p>
+          <div class="border-t border-paper-300 pt-6">
+            <dt class="font-display text-lg text-ink-900">Multi-product lab</dt>
+            <dd class="mt-2 text-sm leading-relaxed text-ink-900/60">
+              Veritas is first. More focused products are on the way.
+            </dd>
           </div>
-        </div>
+        </dl>
       </div>
     </section>
 
     <!-- Approach -->
     <section id="approach" class="px-6 py-24">
       <div class="mx-auto max-w-6xl">
-        <div class="mx-auto max-w-2xl text-center">
-          <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-accent-400">Our Approach</h2>
-          <p class="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            From idea to agent-driven product.
-          </p>
-        </div>
+        <div class="rule-gold h-px w-full"></div>
+        <h2 class="mt-10 text-xs font-medium uppercase tracking-[0.22em] text-gold-600">Our approach</h2>
+        <p class="mt-4 max-w-2xl font-display text-3xl leading-tight text-ink-900 sm:text-4xl">
+          From idea to agent-driven product.
+        </p>
 
-        <div class="mt-14 grid gap-8 sm:grid-cols-3">
-          <div class="relative rounded-2xl border border-white/5 bg-ink-900 p-8">
-            <span class="text-4xl font-extrabold text-white/10">01</span>
-            <h3 class="mt-3 text-lg font-semibold text-white">Identify the bottleneck</h3>
-            <p class="mt-2 text-sm text-slate-400">
+        <ol class="mt-14 grid gap-10 sm:grid-cols-3">
+          <li class="border-t border-ink-900/15 pt-6">
+            <span class="font-display text-sm text-gold-600">01</span>
+            <h3 class="mt-3 font-display text-xl text-ink-900">Identify the bottleneck</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink-900/65">
               We target expert-driven, high-cost workflows where speed and accuracy both matter.
             </p>
-          </div>
-          <div class="relative rounded-2xl border border-white/5 bg-ink-900 p-8">
-            <span class="text-4xl font-extrabold text-white/10">02</span>
-            <h3 class="mt-3 text-lg font-semibold text-white">Design agentic systems</h3>
-            <p class="mt-2 text-sm text-slate-400">
+          </li>
+          <li class="border-t border-ink-900/15 pt-6">
+            <span class="font-display text-sm text-gold-600">02</span>
+            <h3 class="mt-3 font-display text-xl text-ink-900">Design agentic systems</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink-900/65">
               We architect multi-agent pipelines that research, verify, and cite their work.
             </p>
-          </div>
-          <div class="relative rounded-2xl border border-white/5 bg-ink-900 p-8">
-            <span class="text-4xl font-extrabold text-white/10">03</span>
-            <h3 class="mt-3 text-lg font-semibold text-white">Ship &amp; iterate</h3>
-            <p class="mt-2 text-sm text-slate-400">
+          </li>
+          <li class="border-t border-ink-900/15 pt-6">
+            <span class="font-display text-sm text-gold-600">03</span>
+            <h3 class="mt-3 font-display text-xl text-ink-900">Ship &amp; iterate</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink-900/65">
               We launch focused products, learn from real usage, and iterate quickly.
             </p>
-          </div>
-        </div>
+          </li>
+        </ol>
       </div>
     </section>
 
     <!-- Contact / CTA -->
-    <section id="contact" class="border-t border-white/5 px-6 py-24">
-      <div class="mx-auto max-w-4xl rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-10 text-center sm:p-16">
-        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Let's build the next agent-driven product together.
-        </h2>
-        <p class="mx-auto mt-4 max-w-xl text-slate-400">
-          Whether you want to learn more about Veritas, explore a partnership, or just say
-          hello — reach out and we'll get back to you.
+    <section id="contact" class="px-6 pb-24">
+      <div class="mx-auto max-w-6xl rounded-2xl bg-ink-800 px-8 py-16 text-white sm:px-16">
+        <p class="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-gold-400">
+          <span class="h-px w-10 bg-gold-400"></span>
+          Contact
         </p>
-        <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <h2 class="mt-6 max-w-2xl font-display text-3xl leading-tight sm:text-4xl">
+          Let&rsquo;s build the next agent-driven product together.
+        </h2>
+        <p class="mt-5 max-w-prose text-white/70">
+          Whether you want to learn more about Veritas, explore a partnership, or just say
+          hello — reach out and we&rsquo;ll get back to you.
+        </p>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <a
             href="mailto:contact@perseonlabs.io"
-            class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent-500 px-6 py-3 text-sm font-semibold text-ink-950 shadow-lg shadow-accent-500/25 transition hover:bg-accent-400 sm:w-auto"
+            class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-medium text-ink-900 transition hover:bg-gold-100"
           >
             contact@perseonlabs.io
           </a>
@@ -345,7 +349,7 @@
             href="https://veritas.perseonlabs.io"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex w-full items-center justify-center rounded-lg border border-white/10 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/25 hover:text-white sm:w-auto"
+            class="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-medium text-white transition hover:border-white/70"
           >
             Visit Veritas
           </a>
@@ -355,12 +359,12 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-white/5 px-6 py-10">
-    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-sm text-slate-500 sm:flex-row">
+  <footer class="border-t border-paper-300 px-6 py-10">
+    <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 text-sm text-ink-900/55 sm:flex-row sm:items-center">
       <p>© <span id="year"></span> Perseon Labs. All rights reserved.</p>
-      <div class="flex items-center gap-6">
-        <a href="https://veritas.perseonlabs.io" target="_blank" rel="noopener noreferrer" class="transition hover:text-white">Veritas</a>
-        <a href="mailto:contact@perseonlabs.io" class="transition hover:text-white">Contact</a>
+      <div class="flex items-center gap-8">
+        <a href="https://veritas.perseonlabs.io" target="_blank" rel="noopener noreferrer" class="link-underline hover:text-ink-900">Veritas</a>
+        <a href="mailto:contact@perseonlabs.io" class="link-underline hover:text-ink-900">Contact</a>
       </div>
     </div>
   </footer>
