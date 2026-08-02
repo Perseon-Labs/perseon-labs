@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer — Perseon Labs</title>
+  <meta name="description" content="Disclaimer for Perseon Labs and all its products, including Veritas." />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/perseon_labs.png" />
+
+  <!-- Tailwind CSS (CDN, no build step required for static hosting) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            /* Sampled from the Perseon Labs mark: white, Persian blue, gold */
+            paper: {
+              DEFAULT: '#ffffff',
+              50: '#faf9f7',
+              100: '#f7f6f3',
+              200: '#efede8',
+              300: '#e5e2db',
+            },
+            ink: {
+              900: '#12194d',
+              800: '#1b2676',
+              700: '#243186',
+              600: '#2b3a95',
+              100: '#e7e9f5',
+            },
+            gold: {
+              600: '#8a6b20',
+              500: '#c9a13c',
+              400: '#e2b83e',
+              100: '#f5ead0',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
+          },
+          maxWidth: {
+            prose: '38rem',
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="bg-paper font-sans text-ink-900 antialiased selection:bg-ink-100">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-ink-800 focus:px-4 focus:py-2 focus:text-sm focus:text-white">
+    Skip to content
+  </a>
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-50 border-b border-paper-300 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/perseon_mark.png" alt="" width="36" height="36" class="h-9 w-9 object-contain" />
+        <span class="font-display text-lg font-semibold text-ink-900">Perseon Labs</span>
+      </a>
+
+      <nav aria-label="Primary" class="hidden items-center gap-9 text-sm text-ink-900/70 md:flex">
+        <a href="index.html#products" class="link-underline hover:text-ink-900">Products</a>
+        <a href="index.html#about" class="link-underline hover:text-ink-900">About</a>
+        <a href="index.html#approach" class="link-underline hover:text-ink-900">Approach</a>
+        <a href="index.html#contact" class="link-underline hover:text-ink-900">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a
+          href="mailto:contact@perseonlabs.io"
+          class="inline-flex items-center rounded-full bg-ink-800 px-5 py-2 text-sm font-medium text-white transition hover:bg-ink-900"
+        >
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="px-6 py-20 sm:py-24">
+      <div class="mx-auto max-w-3xl">
+        <div class="rule-gold h-px w-full"></div>
+        <h1 class="mt-10 font-display text-4xl font-medium leading-tight text-ink-900 sm:text-5xl">
+          Disclaimer
+        </h1>
+        <p class="mt-5 text-sm text-ink-900/55">
+          Applies to Perseon Labs and all of its products and services, including Veritas.
+        </p>
+
+        <div class="mt-12 space-y-12">
+          <section>
+            <h2 class="font-display text-2xl text-ink-900">General information only</h2>
+            <p class="mt-4 leading-relaxed text-ink-900/70">
+              The content published on this website and any output produced by Perseon Labs
+              products is provided for general informational purposes only. It is not intended
+              to be, and must not be relied upon as, legal, financial, investment, tax,
+              accounting, or other professional advice. You should obtain independent
+              professional advice before acting on any information obtained from Perseon Labs
+              or its products.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="font-display text-2xl text-ink-900">AI-generated output</h2>
+            <p class="mt-4 leading-relaxed text-ink-900/70">
+              Perseon Labs products use artificial intelligence, including large language
+              models and autonomous agents. AI systems can produce output that is inaccurate,
+              incomplete, outdated, or misleading, including citations or sources that do not
+              support the stated conclusion. All output is intended to support — not replace —
+              human expert judgment, and should be independently verified before being used to
+              make any decision.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="font-display text-2xl text-ink-900">No warranties</h2>
+            <p class="mt-4 leading-relaxed text-ink-900/70">
+              This website and all Perseon Labs products are provided on an &ldquo;as is&rdquo;
+              and &ldquo;as available&rdquo; basis, without warranties of any kind, whether
+              express or implied, including any implied warranties of merchantability, fitness
+              for a particular purpose, accuracy, or non-infringement. We do not warrant that
+              the website or any product will be uninterrupted, secure, or error-free.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="font-display text-2xl text-ink-900">Limitation of liability</h2>
+            <p class="mt-4 leading-relaxed text-ink-900/70">
+              To the maximum extent permitted by applicable law, Perseon Labs and its
+              directors, employees, and contractors shall not be liable for any loss or damage,
+              whether direct, indirect, incidental, consequential, or otherwise, arising from
+              your use of, or reliance on, this website, any Perseon Labs product, or any
+              output generated by them.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="font-display text-2xl text-ink-900">Third-party links and content</h2>
+            <p class="mt-4 leading-relaxed text-ink-900/70">
+              This website and our products may reference or link to third-party websites,
+              documents, and data sources. Those resources are not controlled by Perseon Labs,
+              and we are not responsible for their content, accuracy, or availability. A link
+              or citation does not imply endorsement.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="font-display text-2xl text-ink-900">No professional or client relationship</h2>
+            <p class="mt-4 leading-relaxed text-ink-900/70">
+              Use of this website, contacting us, or using a Perseon Labs product does not
+              create any professional, advisory, fiduciary, or client relationship between you
+              and Perseon Labs unless expressly agreed in a written contract.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="font-display text-2xl text-ink-900">Forward-looking statements</h2>
+            <p class="mt-4 leading-relaxed text-ink-900/70">
+              Statements about planned products, features, roadmaps, or future performance are
+              forward-looking and subject to change without notice. They are not commitments to
+              deliver any functionality, and should not be relied upon when making purchasing
+              or other decisions.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="font-display text-2xl text-ink-900">Changes to this disclaimer</h2>
+            <p class="mt-4 leading-relaxed text-ink-900/70">
+              We may update this disclaimer from time to time. The version published on this
+              page is the version currently in effect.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="font-display text-2xl text-ink-900">Contact</h2>
+            <p class="mt-4 leading-relaxed text-ink-900/70">
+              Questions about this disclaimer can be sent to
+              <a href="mailto:contact@perseonlabs.io" class="link-underline text-ink-800">contact@perseonlabs.io</a>.
+            </p>
+          </section>
+        </div>
+
+        <a href="index.html" class="mt-16 inline-flex items-center gap-2 text-sm font-medium text-ink-800 link-underline">
+          <span aria-hidden="true">←</span>
+          Back to home
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-paper-300 px-6 py-10">
+    <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 text-sm text-ink-900/55 sm:flex-row sm:items-center">
+      <p>© <span id="year"></span> Perseon Labs. All rights reserved.</p>
+      <div class="flex items-center gap-8">
+        <a href="https://veritas.perseonlabs.io" target="_blank" rel="noopener noreferrer" class="link-underline hover:text-ink-900">Veritas</a>
+        <a href="mailto:contact@perseonlabs.io" class="link-underline hover:text-ink-900">Contact</a>
+        <a href="disclaimer.html" class="link-underline hover:text-ink-900">Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
